@@ -1,0 +1,33 @@
+edition: 1.0.0
+name: fc-weapp
+access: "{{ access }}"
+
+vars:
+  region: "cn-hangzhou"
+  service:
+    name: "logan1"
+    description: "Backend for weapp demo"
+
+services:
+  framework:
+    component: fc          
+    props:
+      region: ${vars.region}
+      service: ${vars.service}
+      function:
+        name: "server"
+        description: "Backend for weapp demo"
+        codeUri: "./server"
+        runtime: nodejs14
+        timeout: 60
+        caPort: 9000
+      triggers:
+        - name: httpTrigger
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
