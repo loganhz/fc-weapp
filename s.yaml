@@ -9,7 +9,7 @@ vars:
     description: "Backend for weapp demo"
 
 services:
-  framework:
+  weapp:
     component: fc       
     actions:
       pre-deploy:
@@ -19,7 +19,6 @@ services:
           path: ./server
         - run: npm install --only=prod
           path: ./server/dist
-
     props:
       region: ${vars.region}
       service: ${vars.service}
