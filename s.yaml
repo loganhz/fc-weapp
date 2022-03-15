@@ -1,6 +1,6 @@
 edition: 1.0.0
 name: fc-weapp
-access: "{{ access }}"
+access: "loganhz"
 
 vars:
   region: "cn-hangzhou"
