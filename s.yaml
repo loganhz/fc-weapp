@@ -9,7 +9,7 @@ vars:
     description: "Backend for weapp demo"
 
 services:
-  weapp:
+  fc:
     component: fc       
     actions:
       pre-deploy:
