@@ -13,6 +13,8 @@ services:
     component: fc       
     actions:
       pre-deploy:
+        - run: npm install --production
+          path: ./server
         - run: npm run build
           path: ./server
         - run: s build --use-docker
