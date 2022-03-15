@@ -13,7 +13,7 @@ services:
     component: fc       
     actions:
       pre-deploy:
-        - run: npm install --production
+        - run: npm install
           path: ./server
         - run: npm run build
           path: ./server
