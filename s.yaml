@@ -10,17 +10,23 @@ vars:
 
 services:
   framework:
-    component: fc          
+    component: fc       
+    actions:
+      pre-deploy:
+        - run: npm run build
+          path: ./server
+        - run: s build --use-docker
+          path: ./server/dist
+
     props:
       region: ${vars.region}
       service: ${vars.service}
       function:
         name: "server"
         description: "Backend for weapp demo"
-        codeUri: "./server"
+        codeUri: "./server/dist"
         runtime: nodejs14
         timeout: 60
-        caPort: 9000
       triggers:
         - name: httpTrigger
           type: http
