@@ -16,7 +16,7 @@ services:
         - run: npm run build
           path: ./server
         - run: s build --use-docker
-          path: ./server/dist
+          path: ./
 
     props:
       region: ${vars.region}
